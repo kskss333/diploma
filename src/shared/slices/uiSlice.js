@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 const slice = createSlice({
   name: 'ui',
   initialState: { sidebarCollapsed: false, globalLoading: false, notifications: [] },
@@ -9,5 +10,6 @@ const slice = createSlice({
     removeNotification: (s, a) => { s.notifications = s.notifications.filter(n => n.id !== a.payload); },
   },
 });
+
 export const { toggleSidebar, setGlobalLoading, addNotification, removeNotification } = slice.actions;
 export default slice.reducer;
